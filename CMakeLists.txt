@@ -20,6 +20,8 @@ string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-o
 
 add_executable(statistics main.cpp statistics.cpp)
 
+add_executable(statistics2 main2.cpp statistics.cpp)
+
 # se il testing e' abilitato...
 #   per disabilitare il testing, passare -DBUILD_TESTING=OFF a cmake durante la fase di configurazione
 if (BUILD_TESTING)
@@ -28,6 +30,7 @@ if (BUILD_TESTING)
   add_executable(statistics.t statistics.test.cpp statistics.cpp)
   # aggiungi l'eseguibile statistics.t alla lista dei test
   add_test(NAME statistics.t COMMAND statistics.t)
+
 
 endif()
 

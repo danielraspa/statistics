@@ -22,6 +22,9 @@ namespace  pf{
 
       bool remove(double);
 
+      using value_type = double;
+      void push_back(double x) { add(x); };
+
       const auto& entries() const {return entries_;}
 
       auto& entries() {return entries_;}
